@@ -1,0 +1,93 @@
+{
+  "category": [
+    {
+      "id": 101000,
+      "name": "Math",
+      "imgUrl": ""
+    },
+    {
+      "id": 102000,
+      "name": "English",
+      "imgUrl": ""
+    },
+    {
+      "id": 103000,
+      "name": "History",
+      "imgUrl": ""
+    }
+  ],
+  "quiz": [
+    {
+      "id": 101001,
+      "question": "What is 1+1?",
+      "choice": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": 0,
+      "explanation": "Adding 1 and 1 results in 2."
+    },
+    {
+      "id": 101002,
+      "question": "What is 5 x 6?",
+      "choice": [
+        "30",
+        "25",
+        "35",
+        "40"
+      ],
+      "answer": 0,
+      "explanation": "Multiplying 5 by 6 gives 30."
+    },
+    {
+      "id": 102001,
+      "question": "What is the synonym of 'happy'?",
+      "choice": [
+        "Sad",
+        "Joyful",
+        "Angry",
+        "Confused"
+      ],
+      "answer": 1,
+      "explanation": "'Joyful' is a synonym for 'happy' because both words mean feeling great happiness."
+    },
+    {
+      "id": 102002,
+      "question": "What is the past tense of 'run'?",
+      "choice": [
+        "Running",
+        "Ran",
+        "Run",
+        "Runned"
+      ],
+      "answer": 1,
+      "explanation": "The correct past tense of 'run' is 'ran'."
+    },
+    {
+      "id": 103001,
+      "question": "Who was the first president of the United States?",
+      "choice": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Abraham Lincoln",
+        "John Adams"
+      ],
+      "answer": 1,
+      "explanation": "George Washington was the first president of the United States, serving from 1789 to 1797."
+    },
+    {
+      "id": 103002,
+      "question": "In which year did World War II end?",
+      "choice": [
+        "1945",
+        "1939",
+        "1918",
+        "1950"
+      ],
+      "answer": 0,
+      "explanation": "World War II ended in 1945 with the surrender of Germany in May and Japan in September."
+    }
+  ]
+}
