@@ -1,9 +1,13 @@
 <script setup>
-import { useRoute } from "vue-router";
-import {ref, defineEmits, watch} from "vue";
+import {useRoute, useRouter} from "vue-router";
+import {watch} from "vue";
 import data from "../data/quiz.json";
+import {useQuizStore} from "@/stores/quiz.js"
 
 const route = useRoute();
+const router = useRouter();
+
+const quizStore = useQuizStore();
 
 const quiz = {
   question: "",
@@ -11,7 +15,6 @@ const quiz = {
 }
 watch(() => route.params.id, () => {
   const quizData = data.quiz.find((quiz) => quiz.id === parseInt(route.params.id));
-  console.log(quizData);
   quiz.question = quizData.question;
   quiz.choices = quizData.choice.map((choice, i) => ({
     choice: choice,
@@ -19,17 +22,20 @@ watch(() => route.params.id, () => {
   }))
 }, {immediate: true})
 
-const emit = defineEmits(["quizSelect"]);
-
-const selectAnswer = (index) => {
-  emit("quizSelect", index);
+const nextQuestion = (index) => {
+  quizStore.selectAnswer(index);
+  if (quizStore.hasNextQuiz) {
+    router.push("/quiz/" + quizStore.currentQuiz.id);
+  } else {
+    alert("Your score: " + quizStore.score)
+  }
 }
 </script>
 
 <template>
   <h3>Question: {{ quiz.question }}</h3>
   <ul>
-    <li v-for="{choice, index} in quiz.choices" @click="selectAnswer(index)">{{ choice }}</li>
+    <li v-for="{choice, index} in quiz.choices" @click="nextQuestion(index)">{{ choice }}</li>
   </ul>
 </template>
 

@@ -1,11 +1,15 @@
 <script setup>
 import data from '../data/quiz.json'
-import { defineEmits } from 'vue'
+import {useQuizStore} from '@/stores/quiz.js'
+import {useRouter} from "vue-router";
 
-const emit = defineEmits(['quizCategorySelect'])
+const router = useRouter()
+
+const {selectCategoryAndStart, currentQuiz} = useQuizStore()
 
 const selectCategory = (id) => {
-  emit('quizCategorySelect', id)
+  selectCategoryAndStart(id)
+  router.push('/quiz/' + currentQuiz.id)
 }
 </script>
 
